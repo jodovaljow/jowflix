@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/main.css">
+
     <link rel="stylesheet" href="/style/responsive.css">
     <link rel="stylesheet" href="/style/owl/owl.carousel.min.css">
     <link rel="stylesheet" href="/style/owl/owl.theme.default.min.css">
-    <title>NETFLIX CLONE</title>
+    <title>JOWFLIX</title>
 </head>
 
 <body>
@@ -18,9 +19,19 @@
 
         <div class="container">
 
-            <h2 class="logo">NETFLIX</h2>
+            <h2 class="logo">JOWFLIX</h2>
 
-            <nav>
+            <div class="inputs">
+
+                <input type="text" id="titleInput" onkeyup="onSearchChange()" onchange="onSearchChange(this)"
+                    class="height30">
+
+                <button onclick="queryMovies()" role="button" class="height30 width30">
+                    <i class="fab fa-imdb"></i>
+                </button>
+            </div>
+
+            <nav id="nav">
                 <a href="#">Início</a>
                 <a href="#">Séries</a>
                 <a href="#">Filmes</a>
@@ -31,64 +42,22 @@
 
     <main>
 
-        <div class="filme-principal">
+        <div id="filmes-buscados">
+        </div>
 
-            <div class="container">
-
-                <h3 class="titulo">HOUSE OD CARDS</h3>
-
-                <p class="descricao">
-                    Um político inescrupuloso não mede esforços para conquistar o poder nos EUA neste drama vencedor do
-                    Emmy e do Globo de Ouro. Assista agora a nova temporada de House of Cards que está imperdível
-                </p>
-
-                <div class="botoes">
-
-                    <button role="button" class="botao">
-
-                        <i class="fas fa-play"></i>
-                        ASSISTIR AGORA
-                    </button>
-
-                    <button role="button" class="botao">
-
-                        <i class="fas fa-info-circle"></i>
-                        MAIS INFORMAÇÕES
-                    </button>
-                </div>
-            </div>
+        <div id="filmes-adicionados">
         </div>
     </main>
-
-    <div class="carrosel-filmes">
-
-        <div class="owl-carousel owl-theme">
-
-            <div class="item">
-                <img class="box-filme" src="img/movies/batman-dark.jpeg" alt="">
-            </div>
-            <div class="item">
-                <img class="box-filme" src="img/movies/croods.jpeg" alt="">
-            </div>
-            <div class="item">
-                <img class="box-filme" src="img/movies/luca.jpeg" alt="">
-            </div>
-            <div class="item">
-                <img class="box-filme" src="img/movies/mask.jpeg" alt="">
-            </div>
-            <div class="item">
-                <img class="box-filme" src="img/movies/pokemon.webp" alt="">
-            </div>
-            <div class="item">
-                <img class="box-filme" src="img/movies/killbill.png" alt="">
-            </div>
-        </div>
-    </div>
 
     <script src="https://kit.fontawesome.com/ebb2ca7e43.js" crossorigin="anonymous"></script>
     <script src="js/owl/jquery.min.js" crossorigin="anonymous"></script>
     <script src="js/owl/owl.carousel.min.js" crossorigin="anonymous"></script>
     <script src="js/owl/setup.js" crossorigin="anonymous"></script>
+
+    <script src="js/initValue.js" crossorigin="anonymous"></script>
+    <script src="js/carouselQueryView.js" crossorigin="anonymous"></script>
+    <script src="js/carouselAdicionadosView.js" crossorigin="anonymous"></script>
+    <script src="js/controller.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
