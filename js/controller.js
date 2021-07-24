@@ -39,6 +39,9 @@ function controller() {
         carousel += '</div>';
 
         filmesAdicionados.innerHTML = carousel;
+    }
+
+    this.startCarousel = function () {
 
         $('.owl-carousel').owlCarousel({
             loop: false,
@@ -78,7 +81,7 @@ function controller() {
 
         movieHTML += '<img class="box-filme" src="' + movie.image.url + '" alt=""></img>';
 
-        movieHTML += '<p>' + movie.title + '</p>';
+        movieHTML += '<p class="movieTitle">' + movie.title + '</p>';
 
         movieHTML += '</div>';
 
@@ -111,6 +114,22 @@ function controller() {
         const moviesInit = initValue
 
         window.localStorage.setItem('movies', JSON.stringify(moviesInit))
+    }
+
+    this.showType = function (type) {
+
+        switch (type) {
+            case 'tvSeries':
+                return 'Séries'
+            case 'tvMovie':
+                return 'Filmes para TV'
+            case 'movie':
+                return 'Filmes'
+            case 'short':
+                return 'Curtas'
+        }
+
+        return type;
     }
 
     this.checkStorage()

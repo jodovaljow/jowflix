@@ -26,18 +26,30 @@ function carouselAdicionadosView() {
 
         this.tiposAdicionados = [...new Set(this.filmesAdicionados.map(movie => movie.titleType))]
 
-        console.log(this.tiposAdicionados);
-
-
         this.renderMoviesFilter();
     }
 
     this.renderMoviesFilter = function () {
 
-        this.renderMovies(this.idCarouselAdicionados, this.filmesAdicionados)
-    }
+        const divBaseAdicionados = document.getElementById(this.idCarouselAdicionados);
 
-    // todo: fix: render navbar
+        divBaseAdicionados.innerHTML = ''
+
+        this.tiposAdicionados.forEach(tipoAdicionado => {
+
+            const idTipo = 'idTipo' + tipoAdicionado;
+
+            divBaseAdicionados.innerHTML += '<div class="typeCarousel"><h2>' + this.showType(tipoAdicionado) + '</h2>';
+
+            divBaseAdicionados.innerHTML += '<div id="' + idTipo + '"></div>';
+
+            divBaseAdicionados.innerHTML += '</div>';
+
+            this.renderMovies(idTipo, this.filmesAdicionados.filter(filme => filme.titleType == tipoAdicionado))
+        })
+
+        this.startCarousel()
+    }
 }
 
 carouselAdicionadosView()

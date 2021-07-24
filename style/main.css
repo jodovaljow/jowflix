@@ -28,16 +28,6 @@ header .logo {
     font-size: 45px;
 }
 
-header nav a {
-    text-decoration: none;
-    color: #AAA;
-    margin-right: 10px;
-}
-
-header nav a:hover {
-    color: #FFF;
-}
-
 .filme-principal {
     font-size: 16px;
     background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../img/houseofcards.jpeg');
@@ -105,6 +95,10 @@ header nav a:hover {
     top: 5px;
 }
 
+.movieTitle {
+    text-align: center;
+}
+
 .width30 {
     width: 35px;
     font-size: 30px;
@@ -113,4 +107,8 @@ header nav a:hover {
 .inputs {
     display: flex;
     height: 35px;
+}
+
+.typeCarousel{
+    margin-top: 20px;
 }

@@ -40,6 +40,7 @@ function carouselQueryView() {
     this.renderMoviesQuery = function () {
 
         this.renderMovies(this.idCarouselQuery, this.filmesBuscados)
+        this.startCarousel()
     }
 
     this.addMovie = function (idMovie) {
